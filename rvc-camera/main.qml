@@ -25,7 +25,7 @@ import MyApp 1.0  // Change to your registration namespace
          id: guideline
          width: 1920
          height: 720
-         steeringAngle: steeringSlider.value
+         steeringAngle: staticPosition.value
      }
 
      Rectangle {
@@ -143,6 +143,7 @@ import MyApp 1.0  // Change to your registration namespace
                  id: staticSwitch
                  checked: true
                  onCheckedChanged: {
+                     guideline.visible = checked
                  }
              }
 
@@ -162,7 +163,6 @@ import MyApp 1.0  // Change to your registration namespace
                  }
              }
 
-
              Label {
                  text: qsTr("Static Guide Position");
                  color: "#fff";
@@ -171,7 +171,7 @@ import MyApp 1.0  // Change to your registration namespace
 
              Slider {
                  id: staticPosition
-                 from: -10; to: 10
+                 from: 0; to: 0.2
                  value: 0
                  width: 180
                  onValueChanged: {
